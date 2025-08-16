@@ -20,7 +20,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #F0E68C; /* менее яркий желтый */
+        color: #FFD700; /* яркий теплый желтый */
+        line-height: 2; /* увеличенный интервал между строками */
     }
 
     .container {
@@ -29,17 +30,19 @@
         padding: 40px;
         background-color: rgba(0, 0, 0, 0.6); /* более прозрачный блок */
         border-radius: 15px;
-        color: #F0E68C;
+        color: #FFD700;
         text-align: center;
+        line-height: 2;
     }
 
     h1 {
-        font-size: 2.5em; /* размер как у предыдущего привет */
+        font-size: 2.5em;
         margin-bottom: 20px;
     }
 
     p {
         font-size: 1.2em;
+        line-height: 2;
     }
 
     .projects-text {
@@ -48,25 +51,21 @@
     }
 
     ul {
-        list-style: disc inside;
+        list-style: none; /* убираем стандартные маркеры */
         padding-left: 0;
         text-align: left;
     }
 
     ul li a,
     .github-link a {
-        color: #8B3A3A; /* темный красно-коричневый терракотовый цвет */
+        color: #D2691E; /* яркий терракотовый цвет */
         font-weight: bold;
-        text-decoration: none;
+        text-decoration: underline; /* подчеркнутые ссылки */
     }
 
     ul li a:hover,
     .github-link a:hover {
-        text-decoration: underline;
-    }
-
-    footer {
-        display: none;
+        color: #FF7F50; /* подсветка при наведении */
     }
 </style>
 </head>
@@ -75,10 +74,10 @@
         <h1>Welcome to my website</h1>
         <p class="projects-text">Projects can be viewed at the links below:</p>
         <ul>
-            <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
-            <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
-            <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
-            <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
+            <li>🗂️ <a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
+            <li>🗂️ <a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
+            <li>🗂️ <a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
+            <li>🗂️ <a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
         </ul>
         <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
     </div>
