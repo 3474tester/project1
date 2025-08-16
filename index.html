@@ -13,26 +13,25 @@
     body {
         font-family: Arial, sans-serif;
         background-image: url('background.png');
-        background-size: cover;
-        background-position: center;
+        background-size: cover;      /* Растянуть фон */
+        background-position: center; /* По центру */
         background-repeat: no-repeat;
         background-attachment: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #FFD700; /* яркий теплый желтый */
-        line-height: 2; /* увеличенный интервал между строками */
+        color: #FFD94D; /* тёплый жёлтый */
+        line-height: 2;
     }
 
     .container {
         max-width: 900px;
         width: 90%;
         padding: 40px;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.55); /* полупрозрачный блок */
         border-radius: 15px;
-        color: #FFD700;
+        color: #FFD94D;
         text-align: center;
-        line-height: 2;
     }
 
     h1 {
@@ -42,7 +41,6 @@
 
     p {
         font-size: 1.2em;
-        line-height: 2;
     }
 
     .projects-text {
@@ -51,21 +49,47 @@
     }
 
     ul {
-        list-style: none; /* убираем стандартные маркеры */
+        list-style: none;
         padding-left: 0;
         text-align: left;
     }
 
+    ul li {
+        margin-bottom: 10px;
+    }
+
+    ul li::before {
+        content: "📂 ";
+        color: #8B1A1A; /* красно-коричневый (тот же что у ссылок) */
+    }
+
     ul li a,
     .github-link a {
-        color: #A52A2A; /* тёмный красно-коричневый цвет ссылок */
+        color: #8B1A1A; /* тёмно-терракотовый с красным */
         font-weight: bold;
         text-decoration: underline;
     }
 
     ul li a:hover,
     .github-link a:hover {
-        color: #FF4500; /* яркий красный при наведении */
+        color: #FF4500; /* ярче при наведении */
+    }
+
+    /* --- Адаптация для мобильных --- */
+    @media (max-width: 600px) {
+        .container {
+            width: 95%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p, .projects-text {
+            font-size: 1em;
+            line-height: 1.8;
+        }
     }
 </style>
 </head>
@@ -74,10 +98,10 @@
         <h1>Welcome to my website</h1>
         <p class="projects-text">Projects can be viewed at the links below:</p>
         <ul>
-            <li>🗂️ <a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
-            <li>🗂️ <a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
-            <li>🗂️ <a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
-            <li>🗂️ <a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
+            <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
+            <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
+            <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
+            <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
         </ul>
         <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
     </div>
