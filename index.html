@@ -2,85 +2,88 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добро пожаловать!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('background.png'); /* твоя картинка */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: yellow;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Добро пожаловать!</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
 
-        /* Прозрачный тёмный блок */
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: rgba(0, 0, 0, 0.7); /* тёмный прозрачный фон */
-            border-radius: 15px;
-            color: yellow;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('background.png'); /* твоя картинка */
+        background-size: cover;      /* растянуть на весь экран */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: yellow;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+    /* Прозрачный блок по центру */
+    .container {
+        max-width: 900px;
+        width: 90%;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.75); /* тёмный прозрачный фон */
+        border-radius: 15px;
+        color: yellow;
+        text-align: center;
+    }
 
-        p {
-            font-size: 1.2em;
-            text-align: center;
-        }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
 
-        ul {
-            list-style: disc inside; /* маркеры слева */
-            padding-left: 0;
-        }
+    p {
+        font-size: 1.2em;
+    }
 
-        ul li a {
-            color: #E2725B; /* терракотовый цвет ссылок */
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .projects-text {
+        text-align: left; /* выравнивание текста слева */
+        margin-bottom: 15px;
+    }
 
-        ul li a:hover {
-            text-decoration: underline;
-        }
+    ul {
+        list-style: disc inside; /* маркеры слева */
+        padding-left: 0;
+        text-align: left;
+    }
 
-        footer {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            font-size: 0.9em;
-            text-align: center;
-            color: white;
-        }
-    </style>
+    ul li a,
+    .github-link {
+        color: #8B3A3A; /* темный красно-коричневый терракотовый цвет */
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    ul li a:hover,
+    .github-link:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        display: none; /* убрал футер чтобы блок был по центру без перекрытия */
+    }
+</style>
 </head>
 <body>
     <div class="container">
         <h1>Привет! 👋</h1>
         <p>Добро пожаловать на мой сайт</p>
-        <p>Проекты можно посмотреть по ссылкам ниже:</p>
+        <p class="projects-text">Проекты можно посмотреть по ссылкам ниже:</p>
         <ul>
             <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
             <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
             <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
             <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
         </ul>
-        <p><a href="https://github.com" target="_blank">Перейти на GitHub</a></p>
+        <p class="github-link"><a href="https://github.com" target="_blank">Перейти на GitHub</a></p>
     </div>
-
-    <footer>
-        © 2025 Мой сайт | Сделано с ❤️ на GitHub Pages
-    </footer>
 </body>
 </html>
