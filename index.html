@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Добро пожаловать!</title>
+<title>Welcome!</title>
 <style>
     html, body {
         height: 100%;
@@ -13,31 +12,30 @@
 
     body {
         font-family: Arial, sans-serif;
-        background-image: url('background.png'); /* твоя картинка */
-        background-size: cover;      /* растянуть на весь экран */
+        background-image: url('background.png');
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: yellow;
+        color: #F0E68C; /* менее яркий желтый */
     }
 
-    /* Прозрачный блок по центру */
     .container {
         max-width: 900px;
         width: 90%;
         padding: 40px;
-        background-color: rgba(0, 0, 0, 0.75); /* тёмный прозрачный фон */
+        background-color: rgba(0, 0, 0, 0.6); /* более прозрачный блок */
         border-radius: 15px;
-        color: yellow;
+        color: #F0E68C;
         text-align: center;
     }
 
     h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
+        font-size: 2.5em; /* размер как у предыдущего привет */
+        margin-bottom: 20px;
     }
 
     p {
@@ -45,45 +43,44 @@
     }
 
     .projects-text {
-        text-align: left; /* выравнивание текста слева */
+        text-align: left;
         margin-bottom: 15px;
     }
 
     ul {
-        list-style: disc inside; /* маркеры слева */
+        list-style: disc inside;
         padding-left: 0;
         text-align: left;
     }
 
     ul li a,
-    .github-link {
+    .github-link a {
         color: #8B3A3A; /* темный красно-коричневый терракотовый цвет */
         font-weight: bold;
         text-decoration: none;
     }
 
     ul li a:hover,
-    .github-link:hover {
+    .github-link a:hover {
         text-decoration: underline;
     }
 
     footer {
-        display: none; /* убрал футер чтобы блок был по центру без перекрытия */
+        display: none;
     }
 </style>
 </head>
 <body>
     <div class="container">
-        <h1>Привет! 👋</h1>
-        <p>Добро пожаловать на мой сайт</p>
-        <p class="projects-text">Проекты можно посмотреть по ссылкам ниже:</p>
+        <h1>Welcome to my website</h1>
+        <p class="projects-text">Projects can be viewed at the links below:</p>
         <ul>
             <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
             <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
             <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
             <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
         </ul>
-        <p class="github-link"><a href="https://github.com" target="_blank">Перейти на GitHub</a></p>
+        <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
     </div>
 </body>
 </html>
