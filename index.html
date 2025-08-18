@@ -5,105 +5,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome!</title>
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('background.png');
-        background-size: cover;      /* Растянуть фон */
-        background-position: center; /* По центру */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFD94D; /* тёплый жёлтый */
-        line-height: 2;
-    }
-
-    .container {
-        max-width: 900px;
-        width: 90%;
-        padding: 40px;
-        background-color: rgba(0, 0, 0, 0.55); /* полупрозрачный блок */
-        border-radius: 15px;
-        color: #FFD94D;
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
-
-    p {
-        font-size: 1.2em;
-    }
-
-    .projects-text {
-        text-align: left;
-        margin-bottom: 15px;
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-        text-align: left;
-    }
-
-    ul li {
-        margin-bottom: 10px;
-    }
-
-    ul li::before {
-        content: "📂 ";
-        color: #8B1A1A; /* красно-коричневый (тот же что у ссылок) */
-    }
-
-    ul li a,
-    .github-link a {
-        color: #8B1A1A; /* тёмно-терракотовый с красным */
-        font-weight: bold;
-        text-decoration: underline;
-    }
-
-    ul li a:hover,
-    .github-link a:hover {
-        color: #FF4500; /* ярче при наведении */
-    }
-
-    /* --- Адаптация для мобильных --- */
-    @media (max-width: 600px) {
-        .container {
-            width: 95%;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        p, .projects-text {
-            font-size: 1em;
-            line-height: 1.8;
-        }
-    }
+html, body { height: 100%; margin: 0; }
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFD94D;
+    line-height: 2;
+    position: relative;
+    overflow: hidden;
+}
+.container {
+    max-width: 900px;
+    width: 90%;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    color: #FFD94D;
+    text-align: center;
+}
+h1 { font-size: 2.5em; margin-bottom: 20px; }
+p { font-size: 1.2em; }
+.projects-text { text-align: left; margin-bottom: 15px; }
+ul { list-style: none; padding-left: 0; text-align: left; }
+ul li { margin-bottom: 10px; }
+ul li::before { content: "📂 "; color: #8B1A1A; }
+ul li a, .github-link a { color: #8B1A1A; font-weight: bold; text-decoration: underline; }
+ul li a:hover, .github-link a:hover { color: #FF4500; }
+@media (max-width: 600px) {
+    .container { width: 95%; padding: 20px; }
+    h1 { font-size: 2em; }
+    p, .projects-text { font-size: 1em; line-height: 1.8; }
+}
+/* Бегающие божьи коровки */
+.ladybug {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+    will-change: transform, top, left;
+    font-size: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+.ladybug.flap {
+    animation: flap 0.4s infinite;
+}
+@keyframes flap {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(10deg); }
+    50% { transform: scale(1) rotate(0deg); }
+    75% { transform: scale(1.1) rotate(-10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+/* Выскакивающие божьи коровки */
+.ladybug-special {
+    position: fixed;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    z-index: 10000;
+}
+.ladybug-special .hand {
+    margin-left: 5px;
+    animation: wave 1s infinite alternate;
+    transform-origin: bottom center;
+    display: inline-block;
+}
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(30deg); }
+}
 </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to my website</h1>
-        <p class="projects-text">Projects can be viewed at the links below:</p>
-        <ul>
-            <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
-            <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
-            <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
-            <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
-        </ul>
-        <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
-    </div>
+<div class="container">
+    <h1>Welcome to my website</h1>
+    <p class="projects-text">Projects can be viewed at the links below:</p>
+    <ul>
+        <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
+        <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
+        <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
+        <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
+    </ul>
+    <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
+</div>
+
+<!-- Контейнеры для божьих коровок -->
+<div id="ladybugs"></div>
+<div id="special-ladybug" class="ladybug-special">🐞 <div class="hand">👋</div> 😊</div>
+
+<script>
+// --- Бегающие ---
+const container = document.getElementById('ladybugs');
+const bugCount = 6;
+const colors = ['red', 'orange', 'yellow'];
+for (let i = 0; i < bugCount; i++) {
+    const bug = document.createElement('div');
+    bug.classList.add('ladybug');
+    bug.textContent = '🐞';
+    const size = Math.floor(Math.random() * 40) + 24;
+    bug.style.fontSize = size + 'px';
+    container.appendChild(bug);
+    runLadybug(bug);
+}
+function runLadybug(bug) {
+    let direction = Math.random() > 0.5 ? 1 : -1;
+    let startX = direction === 1 ? -60 : window.innerWidth + 60;
+    let endX = direction === 1 ? window.innerWidth + 60 : -60;
+    const baseY = Math.random() * 70 + 10;
+    bug.style.left = `${startX}px`;
+    bug.style.top = `${baseY}vh`;
+    bug.style.transform = direction === 1 ? 'scaleX(1)' : 'scaleX(-1)';
+    const duration = Math.random() * 7000 + 5000;
+    const startTime = performance.now();
+    function animate(now) {
+        const progress = (now - startTime) / duration;
+        if (progress >= 1) {
+            if (Math.random() > 0.6) {
+                bug.classList.add("flap");
+                setTimeout(() => { bug.classList.remove("flap"); runLadybug(bug); }, 2000);
+            } else if (Math.random() > 0.4) {
+                direction *= -1; [startX, endX] = [endX, startX];
+                bug.style.transform = direction === 1 ? 'scaleX(1)' : 'scaleX(-1)';
+                runLadybug(bug);
+            } else {
+                setTimeout(() => runLadybug(bug), 2000 + Math.random() * 3000);
+            }
+            return;
+        }
+        const x = startX + (endX - startX) * progress;
+        const amplitude = 30;
+        const frequency = 6;
+        const y = (window.innerHeight * baseY / 100) + Math.sin(progress * frequency * Math.PI * 2) * amplitude;
+        bug.style.left = `${x}px`;
+        bug.style.top = `${y}px`;
+        requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+}
+
+// --- Выскоки ---
+const special = document.getElementById('special-ladybug');
+function showSpecial() {
+    const positions = ['top', 'bottom', 'left', 'right'];
+    const pos = positions[Math.floor(Math.random() * positions.length)];
+    special.style.top = '';
+    special.style.bottom = '';
+    special.style.left = '';
+    special.style.right = '';
+    if (pos === 'top' || pos === 'bottom') {
+        special.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+        special.style[pos] = '-100px';
+    } else {
+        special.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+        special.style[pos] = '-100px';
+    }
+    special.style.display = 'flex';
+    setTimeout(() => {
+        special.style[pos] = '20px';
+    }, 50);
+    setTimeout(() => { special.style.display = 'none'; }, 4000);
+    setTimeout(showSpecial, 8000 + Math.random() * 8000);
+}
+setTimeout(showSpecial, 5000);
+</script>
 </body>
 </html>
