@@ -21,7 +21,7 @@ html, body {
     background-color: rgba(0,0,0,0.55);
     border-radius: 15px;
     color: #FFD94D;
-    text-align: center; /* для заголовка по центру */
+    text-align: center;
     position: relative;
     margin: auto;
     top: 50%;
@@ -41,7 +41,7 @@ h1 {
     display:inline-block;
     transform-origin: 30% 70%;
     font-size:40px;
-    margin-left:0px; /* почти рядом */
+    margin:0; /* убираем все отступы */
     opacity: 0;
     transition: opacity 0.5s;
     vertical-align: middle;
@@ -49,9 +49,9 @@ h1 {
 
 .smile-emoji {
     font-size:40px;
-    margin-left:3px; /* минимальный отступ между рукой и смайликом */
+    margin:0; /* убираем все отступы */
     position: relative;
-    top:-5px; /* поднимаем смайлик */
+    top:-3px; /* слегка поднимаем смайлик */
     opacity: 0;
     transition: opacity 0.5s;
     vertical-align: middle;
@@ -174,6 +174,3 @@ setTimeout(showWave, 1000);
 </script>
 </body>
 </html>
-
-
-
