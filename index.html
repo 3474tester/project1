@@ -42,6 +42,8 @@ h1 {
     transform-origin: 30% 70%;
     font-size:40px;
     margin-left:5px;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .smile-emoji {
@@ -49,6 +51,8 @@ h1 {
     margin-left:0px;
     position: relative;
     top:3px;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 /* Анимация махающей руки */
@@ -63,6 +67,7 @@ h1 {
 
 .popping-wave {
     animation: waveHand 1s linear 1;
+    opacity: 1 !important;
 }
 
 /* Секция проектов слева */
@@ -88,17 +93,27 @@ ul li::before {
     content:"📂 "; 
     color:#8B1A1A; 
 }
-ul li a, .github-link a { 
+ul li a { 
     color:#8B1A1A; 
     text-decoration: underline; 
     font-weight:bold; 
 }
-ul li a:hover, .github-link a:hover { 
+ul li a:hover { 
     color:#FF4500; 
 }
 
+/* GitHub ссылка внизу центра */
 .github-link {
-    margin-top: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+.github-link a {
+    color:#8B1A1A;
+    text-decoration: underline;
+    font-weight:bold;
+}
+.github-link a:hover {
+    color:#FF4500;
 }
 
 @media(max-width:600px){
@@ -123,22 +138,26 @@ ul li a:hover, .github-link a:hover {
             <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
             <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
         </ul>
-        <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
     </div>
+
+    <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
 </div>
 
 <script>
 const wave = document.getElementById('waveEmoji');
-wave.style.visibility = 'hidden';
+const hand = wave.querySelector('.hand-emoji');
+const smile = wave.querySelector('.smile-emoji');
 
 function showWave() {
-    wave.style.visibility = 'visible';
+    hand.style.opacity = '1';
+    smile.style.opacity = '1';
     wave.classList.add('popping-wave');
 
     // Смайлик держится 10 секунд
     setTimeout(() => {
         wave.classList.remove('popping-wave');
-        wave.style.visibility = 'hidden';
+        hand.style.opacity = '0';
+        smile.style.opacity = '0';
     }, 10000);
 
     // Повтор через 3 минуты
@@ -150,14 +169,3 @@ setTimeout(showWave, 1000);
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
