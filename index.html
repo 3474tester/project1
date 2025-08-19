@@ -5,128 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome!</title>
 <style>
-html, body { height: 100%; margin: 0; overflow: hidden; }
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFD94D;
-    line-height: 2;
-    position: relative;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFD94D;
+        line-height: 2;
+    }
 
-.container {
-    max-width: 900px;
-    width: 90%;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 15px;
-    text-align: center;
-    z-index: 1; /* поверх фона, под коровками */
-}
+    .container {
+        max-width: 900px;
+        width: 90%;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.55);
+        border-radius: 15px;
+        color: #FFD94D;
+        text-align: center;
+    }
 
-h1 { font-size: 2.5em; margin-bottom: 20px; }
-p { font-size: 1.2em; }
-.projects-text { text-align: left; margin-bottom: 15px; }
-ul { list-style: none; padding-left: 0; text-align: left; }
-ul li { margin-bottom: 10px; }
-ul li::before { content: "📂 "; color: #8B1A1A; }
-ul li a, .github-link a { color: #8B1A1A; font-weight: bold; text-decoration: underline; }
-ul li a:hover, .github-link a:hover { color: #FF4500; }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
 
-@media (max-width: 600px) {
-    .container { width: 95%; padding: 20px; }
-    h1 { font-size: 2em; }
-    p, .projects-text { font-size: 1em; line-height: 1.8; }
-}
+    p {
+        font-size: 1.2em;
+    }
 
-/* --- Божьи коровки --- */
-.ladybug {
-    position: absolute;
-    font-size: 30px;
-    pointer-events: none;
-    z-index: 9999;
-    transform-origin: center;
-}
+    .projects-text {
+        text-align: left;
+        margin-bottom: 15px;
+    }
 
-/* Анимация перебирания ножками */
-@keyframes walk {
-    0% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-2px) rotate(-5deg); }
-    50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(2px) rotate(5deg); }
-    100% { transform: translateY(0) rotate(0deg); }
-}
-.ladybug.running { animation: walk 0.4s infinite linear; }
+    ul {
+        list-style: none;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+    ul li::before {
+        content: "📂 ";
+        color: #8B1A1A;
+    }
+
+    ul li a,
+    .github-link a {
+        color: #8B1A1A;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    ul li a:hover,
+    .github-link a:hover {
+        color: #FF4500;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            width: 95%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p, .projects-text {
+            font-size: 1em;
+            line-height: 1.8;
+        }
+    }
+
+    /* --- Коровки --- */
+    .ladybug {
+        position: absolute;
+        font-size: 30px;
+        pointer-events: none;
+        z-index: 9999;
+        transform-origin: center;
+        color: #8B1A1A; /* морковный цвет */
+    }
+
+    #bottomBug {
+        font-size: 28px;
+    }
+
+    .waving {
+        font-size: 25px;
+    }
 </style>
 </head>
 <body>
-<div class="container">
-    <h1>Welcome to my website</h1>
-    <p class="projects-text">Projects can be viewed at the links below:</p>
-    <ul>
-        <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
-        <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
-        <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
-        <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
-    </ul>
-    <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
-</div>
+    <div class="container">
+        <h1>Welcome to my website</h1>
+        <p class="projects-text">Projects can be viewed at the links below:</p>
+        <ul>
+            <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
+            <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
+            <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
+            <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
+        </ul>
+        <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
+    </div>
 
-<!-- Божьи коровки -->
-<div id="ladybugs-container"></div>
+    <!-- Нижняя бегущая коровка -->
+    <div id="bottomBug" class="ladybug">🐞</div>
 
-<script>
-// Создаём три коровки
-const container = document.getElementById('ladybugs-container');
-const bugCount = 3;
+    <script>
+    // --- Нижняя коровка ---
+    const bottomBug = document.getElementById('bottomBug');
+    let direction = 1; // 1 вправо, -1 влево
+    let posX = 0;
 
-for (let i = 0; i < bugCount; i++) {
-    const bug = document.createElement('div');
-    bug.classList.add('ladybug', 'running');
-    bug.textContent = '🐞'; // можно заменить на картинку в профиль
-    bug.style.fontSize = `${20 + Math.random()*10}px`;
-    container.appendChild(bug);
-
-    runLadybug(bug);
-}
-
-function runLadybug(bug) {
-    let direction = Math.random() > 0.5 ? 1 : -1;
-    let startX = direction === 1 ? -50 : window.innerWidth + 50;
-    let endX = direction === 1 ? window.innerWidth + 50 : -50;
-    const y = Math.random() * (window.innerHeight - 50);
-    const duration = 10000 + Math.random() * 5000;
-
-    bug.style.top = `${y}px`;
-    bug.style.left = `${startX}px`;
-    bug.style.transform = direction === 1 ? 'scaleX(1)' : 'scaleX(-1)';
-
-    const startTime = performance.now();
-
-    function animate(now) {
-        const progress = (now - startTime) / duration;
-        if (progress >= 1) {
+    function moveBottomBug() {
+        posX += direction * 1; // скорость
+        if (posX > window.innerWidth - 60 || posX < 0) {
             direction *= -1;
-            [startX, endX] = [endX, startX];
-            bug.style.transform = direction === 1 ? 'scaleX(1)' : 'scaleX(-1)';
-            runLadybug(bug);
-            return;
+            bottomBug.style.transform = direction === 1 ? 'scale(1,1)' : 'scale(-1,1)';
         }
-        const x = startX + (endX - startX) * progress;
-        bug.style.left = `${x}px`;
-        requestAnimationFrame(animate);
+        bottomBug.style.left = posX + 'px';
+        requestAnimationFrame(moveBottomBug);
+    }
+    moveBottomBug();
+
+    // --- Выскакивающая коровка ---
+    function spawnPeekBug() {
+        const bug = document.createElement('div');
+        bug.classList.add('ladybug', 'waving');
+        bug.textContent = '🐞';
+        bug.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+        bug.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+        document.body.appendChild(bug);
+
+        bug.style.clip = 'rect(0px,50px,20px,0px)'; // видна только мордочка и лапка
+
+        setTimeout(() => {
+            bug.remove();
+            setTimeout(spawnPeekBug, Math.random()*5000 + 2000);
+        }, 3000);
     }
 
-    requestAnimationFrame(animate);
-}
-</script>
+    spawnPeekBug();
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
