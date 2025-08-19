@@ -5,164 +5,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome!</title>
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
-    }
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    background: url('background.png') no-repeat center/cover fixed;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        background-image: url('background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFD94D;
-        line-height: 2;
-    }
+/* Прозрачный блок */
+.container {
+    max-width: 900px;
+    width: 90%;
+    padding: 40px;
+    background-color: rgba(0,0,0,0.55);
+    border-radius: 15px;
+    color: #FFD94D;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
 
-    .container {
-        max-width: 900px;
-        width: 90%;
-        padding: 40px;
-        background-color: rgba(0, 0, 0, 0.55);
-        border-radius: 15px;
-        color: #FFD94D;
-        text-align: center;
-    }
+h1 { font-size: 2.5em; margin-bottom: 20px; }
+p, .projects-text { font-size: 1.2em; line-height: 2; text-align: left; }
+ul { list-style: none; padding-left:0; }
+ul li { margin-bottom: 10px; }
+ul li::before { content:"📂 "; color:#8B1A1A; }
+ul li a, .github-link a { color:#8B1A1A; text-decoration: underline; font-weight:bold; }
+ul li a:hover, .github-link a:hover { color:#FF4500; }
 
-    h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
+@media(max-width:600px){
+    .container { width:95%; padding:20px; }
+    h1{font-size:2em;}
+    p,.projects-text{font-size:1em;line-height:1.8;}
+}
 
-    p {
-        font-size: 1.2em;
-    }
+/* Коровки */
+.ladybug {
+    position:absolute;
+    z-index: 9999;
+}
 
-    .projects-text {
-        text-align: left;
-        margin-bottom: 15px;
-    }
+#bottomBug {
+    width:50px;
+    height:30px;
+    bottom:0;
+}
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-        text-align: left;
-    }
-
-    ul li {
-        margin-bottom: 10px;
-    }
-
-    ul li::before {
-        content: "📂 ";
-        color: #8B1A1A;
-    }
-
-    ul li a,
-    .github-link a {
-        color: #8B1A1A;
-        font-weight: bold;
-        text-decoration: underline;
-    }
-
-    ul li a:hover,
-    .github-link a:hover {
-        color: #FF4500;
-    }
-
-    @media (max-width: 600px) {
-        .container {
-            width: 95%;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        p, .projects-text {
-            font-size: 1em;
-            line-height: 1.8;
-        }
-    }
-
-    /* --- Коровки --- */
-    .ladybug {
-        position: absolute;
-        font-size: 30px;
-        pointer-events: none;
-        z-index: 9999;
-        transform-origin: center;
-        color: #8B1A1A; /* морковный цвет */
-    }
-
-    #bottomBug {
-        font-size: 28px;
-    }
-
-    .waving {
-        font-size: 25px;
-    }
+#peekBug {
+    width:70px;
+    height:40px;
+}
 </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to my website</h1>
-        <p class="projects-text">Projects can be viewed at the links below:</p>
-        <ul>
-            <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
-            <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
-            <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
-            <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
-        </ul>
-        <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
-    </div>
+<div class="container">
+    <h1>Welcome to my website</h1>
+    <p class="projects-text">Projects can be viewed at the links below:</p>
+    <ul>
+        <li><a href="Yandex.Metro & Yandex.Counter.xlsx" target="_blank">Yandex.Metro & Yandex.Counter.xlsx</a></li>
+        <li><a href="Yandex.Routes.xlsx" target="_blank">Yandex.Routes.xlsx</a></li>
+        <li><a href="Yandex.Scooter.xlsx" target="_blank">Yandex.Scooter.xlsx</a></li>
+        <li><a href="Yandex.Scooter2.xlsx" target="_blank">Yandex.Scooter2.xlsx</a></li>
+    </ul>
+    <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
+</div>
 
-    <!-- Нижняя бегущая коровка -->
-    <div id="bottomBug" class="ladybug">🐞</div>
+<!-- Нижняя бегущая коровка -->
+<div id="bottomBug" class="ladybug">
+<svg viewBox="0 0 100 60">
+    <ellipse cx="30" cy="30" rx="25" ry="15" fill="#8B1A1A"/>
+    <circle cx="55" cy="30" r="10" fill="#FFB347"/>
+    <circle cx="57" cy="27" r="2" fill="#000"/>
+    <circle cx="61" cy="27" r="2" fill="#000"/>
+    <path d="M57 33 Q60 36 63 33" stroke="#000" stroke-width="1" fill="transparent"/>
+    <!-- Лапки -->
+    <line x1="20" y1="20" x2="15" y2="15" stroke="#8B1A1A" stroke-width="2">
+        <animate attributeName="x2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="20" y1="40" x2="15" y2="45" stroke="#8B1A1A" stroke-width="2">
+        <animate attributeName="x2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="45;43;45" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+</svg>
+</div>
 
-    <script>
-    // --- Нижняя коровка ---
-    const bottomBug = document.getElementById('bottomBug');
-    let direction = 1; // 1 вправо, -1 влево
-    let posX = 0;
+<!-- Выскакивающая коровка -->
+<div id="peekBug" class="ladybug">
+<svg viewBox="0 0 100 60">
+    <ellipse cx="30" cy="30" rx="35" ry="20" fill="#8B1A1A"/>
+    <circle cx="55" cy="30" r="12" fill="#FFB347"/>
+    <circle cx="57" cy="27" r="2" fill="#000"/>
+    <circle cx="61" cy="27" r="2" fill="#000"/>
+    <path d="M57 33 Q60 36 63 33" stroke="#000" stroke-width="1" fill="transparent"/>
+    <line x1="20" y1="20" x2="15" y2="15" stroke="#8B1A1A" stroke-width="2">
+        <animate attributeName="x2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+</svg>
+</div>
 
-    function moveBottomBug() {
-        posX += direction * 1; // скорость
-        if (posX > window.innerWidth - 60 || posX < 0) {
-            direction *= -1;
-            bottomBug.style.transform = direction === 1 ? 'scale(1,1)' : 'scale(-1,1)';
-        }
-        bottomBug.style.left = posX + 'px';
-        requestAnimationFrame(moveBottomBug);
+<script>
+// Нижняя коровка
+const bottomBug = document.getElementById('bottomBug');
+let posX = 0, dir = 1;
+function moveBottomBug() {
+    posX += dir*1; // скорость
+    bottomBug.style.left = posX + 'px';
+    if(posX > window.innerWidth-60 || posX<0){
+        dir*=-1;
+        bottomBug.style.transform = dir===1 ? 'scale(1,1)' : 'scale(-1,1)';
+        setTimeout(() => requestAnimationFrame(moveBottomBug), 30000); // пауза 30 сек
+        return;
     }
-    moveBottomBug();
+    requestAnimationFrame(moveBottomBug);
+}
+moveBottomBug();
 
-    // --- Выскакивающая коровка ---
-    function spawnPeekBug() {
-        const bug = document.createElement('div');
-        bug.classList.add('ladybug', 'waving');
-        bug.textContent = '🐞';
-        bug.style.left = Math.random() * (window.innerWidth - 50) + 'px';
-        bug.style.top = Math.random() * (window.innerHeight - 50) + 'px';
-        document.body.appendChild(bug);
+// Вскакивающая коровка
+const peekBug = document.getElementById('peekBug');
+const container = document.querySelector('.container');
+peekBug.style.display = 'none';
+function spawnPeekBug() {
+    const rect = container.getBoundingClientRect();
+    peekBug.style.left = rect.left + Math.random()*(rect.width-70) + 'px';
+    peekBug.style.top = rect.top - 50 + 'px'; // над блоком
+    peekBug.style.display = 'block';
 
-        bug.style.clip = 'rect(0px,50px,20px,0px)'; // видна только мордочка и лапка
-
-        setTimeout(() => {
-            bug.remove();
-            setTimeout(spawnPeekBug, Math.random()*5000 + 2000);
-        }, 3000);
-    }
-
-    spawnPeekBug();
-    </script>
+    setTimeout(() => {
+        peekBug.style.display = 'none';
+        setTimeout(spawnPeekBug, Math.random()*10000 + 6000); // в 2 раза реже
+    }, 3000);
+}
+spawnPeekBug();
+</script>
 </body>
 </html>
 
