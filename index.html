@@ -25,6 +25,9 @@ html, body {
     text-align: center;
     position: relative;
     z-index: 1;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 h1 { font-size: 2.5em; margin-bottom: 20px; }
@@ -50,7 +53,7 @@ ul li a:hover, .github-link a:hover { color:#FF4500; }
 #bottomBug {
     width:50px;
     height:30px;
-    bottom:0;
+    bottom:10px;
 }
 
 #peekBug {
@@ -80,7 +83,6 @@ ul li a:hover, .github-link a:hover { color:#FF4500; }
     <circle cx="57" cy="27" r="2" fill="#000"/>
     <circle cx="61" cy="27" r="2" fill="#000"/>
     <path d="M57 33 Q60 36 63 33" stroke="#000" stroke-width="1" fill="transparent"/>
-    <!-- Лапки -->
     <line x1="20" y1="20" x2="15" y2="15" stroke="#8B1A1A" stroke-width="2">
         <animate attributeName="x2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
         <animate attributeName="y2" values="15;17;15" dur="0.6s" repeatCount="indefinite"/>
@@ -108,13 +110,13 @@ ul li a:hover, .github-link a:hover { color:#FF4500; }
 </div>
 
 <script>
-// Нижняя коровка
+// Нижняя коровка медленнее
 const bottomBug = document.getElementById('bottomBug');
 let posX = 0, dir = 1;
 function moveBottomBug() {
-    posX += dir*1; // скорость
+    posX += dir*0.5; // скорость уменьшена
     bottomBug.style.left = posX + 'px';
-    if(posX > window.innerWidth-60 || posX<0){
+    if(posX > window.innerWidth || posX< -60){ // уходит за границу
         dir*=-1;
         bottomBug.style.transform = dir===1 ? 'scale(1,1)' : 'scale(-1,1)';
         setTimeout(() => requestAnimationFrame(moveBottomBug), 30000); // пауза 30 сек
@@ -143,14 +145,3 @@ spawnPeekBug();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
