@@ -41,18 +41,20 @@ h1 {
     display:inline-block;
     transform-origin: 30% 70%;
     font-size:40px;
-    margin-left:5px;
+    margin-left:0px; /* почти рядом */
     opacity: 0;
     transition: opacity 0.5s;
+    vertical-align: middle;
 }
 
 .smile-emoji {
     font-size:40px;
-    margin-left:0px;
+    margin-left:3px; /* минимальный отступ между рукой и смайликом */
     position: relative;
-    top:3px;
+    top:-5px; /* поднимаем смайлик */
     opacity: 0;
     transition: opacity 0.5s;
+    vertical-align: middle;
 }
 
 /* Анимация махающей руки */
@@ -172,5 +174,6 @@ setTimeout(showWave, 1000);
 </script>
 </body>
 </html>
+
 
 
