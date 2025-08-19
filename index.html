@@ -21,7 +21,7 @@ html, body {
     background-color: rgba(0,0,0,0.55);
     border-radius: 15px;
     color: #FFD94D;
-    text-align: left;
+    text-align: left; 
     position: relative;
     margin: auto;
     top: 50%;
@@ -33,25 +33,24 @@ h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     display: flex;
-    align-items: center; /* чтобы смайлик был чуть ниже */
+    justify-content: space-between; /* заголовок слева, смайлик справа */
+    align-items: center;
 }
 
 .hand-emoji {
-    display: inline-block;
+    display:inline-block;
     transform-origin: 30% 70%;
-    animation: waveHand 1.5s infinite;
-    margin-right: 5px; /* минимальное расстояние до лица */
-    font-size: 40px;
+    font-size:40px;
 }
 
 .smile-emoji {
-    font-size: 40px;
-    margin-left: -5px; /* почти рядом с рукой */
+    font-size:40px;
+    margin-left: 5px;
     position: relative;
-    top: 3px; /* чуть ниже руки */
+    top: 3px;
 }
 
-/* Анимация руки */
+/* Анимация махающей руки */
 @keyframes waveHand {
     0% { transform: rotate(0deg); }
     20% { transform: rotate(20deg); }
@@ -59,6 +58,10 @@ h1 {
     60% { transform: rotate(20deg); }
     80% { transform: rotate(-20deg); }
     100% { transform: rotate(0deg); }
+}
+
+.popping-wave {
+    animation: waveHand 1s linear 1;
 }
 
 p, .projects-text { font-size: 1.2em; line-height: 2; }
@@ -78,9 +81,8 @@ ul li a:hover, .github-link a:hover { color:#FF4500; }
 <body>
 <div class="container">
     <h1>
-        <span class="hand-emoji">👋</span>
-        <span class="smile-emoji">😊</span>
         Welcome to my website
+        <span id="waveEmoji"><span class="hand-emoji">👋</span><span class="smile-emoji">😊</span></span>
     </h1>
     <p class="projects-text">Projects can be viewed at the links below:</p>
     <ul>
@@ -91,5 +93,30 @@ ul li a:hover, .github-link a:hover { color:#FF4500; }
     </ul>
     <p class="github-link"><a href="https://github.com" target="_blank">Go to GitHub</a></p>
 </div>
+
+<script>
+const wave = document.getElementById('waveEmoji');
+
+// Скрыть смайлик сразу
+wave.style.visibility = 'hidden';
+
+function showWave() {
+    wave.style.visibility = 'visible';
+    // добавляем анимацию махания руки
+    wave.classList.add('popping-wave');
+
+    // через 1 секунду убираем махание и скрываем смайлик
+    setTimeout(() => {
+        wave.classList.remove('popping-wave');
+        wave.style.visibility = 'hidden';
+    }, 1000);
+
+    // повтор через 3 минуты
+    setTimeout(showWave, 180000);
+}
+
+// старт через 1 секунду
+setTimeout(showWave, 1000);
+</script>
 </body>
 </html>
